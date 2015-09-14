@@ -1,0 +1,31 @@
+{
+  "name": "endless_sequences",
+  "version": "1.0.0",
+  "description": "offline coding task - endless sequences",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannypk/endless_sequence.git"
+  },
+  "keywords": [
+    "task",
+    "numbers",
+    "sequence",
+    "demo",
+    "test",
+    "exercise"
+  ],
+  "author": "dannypk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannypk/endless_sequence/issues"
+  },
+  "homepage": "https://github.com/dannypk/endless_sequence#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jasmine-node": "^1.14.5"
+  }
+}
