@@ -12,17 +12,35 @@ var calculateMaximumCycleLength = function (interval) {
         currentLength = calculateEndlessSequence(index);
         if (currentLength > maxCycleLength) maxCycleLength = currentLength;
     }
-
     return maxCycleLength;
 };
 
 var calculateEndlessSequence = function (value) {
-    if (value === 1) {
-        return 1;
+    var sequence = 1;
+
+    while (value !== 1) {
+        value = operateNumber(value);
+        sequence++;
     }
-    if (value === 2) {
-        return 2;
-    }
+    return sequence;
 };
 
-module.exports.calculateMaximumCycleLength = calculateMaximumCycleLength;
+var isOdd = function (value) {
+    return value % 2 === 1;
+};
+
+var operateNumber = function (value) {
+    var newValue = 0;
+    isOdd(value) ? newValue = value * 3 + 1 : newValue = value / 2;
+    return newValue;
+};
+
+module.exports = {
+    isOdd: isOdd,
+    operateNumber: operateNumber,
+    calculateEndlessSequence: calculateEndlessSequence,
+    calculateMaximumCycleLength: calculateMaximumCycleLength
+};
+
+
+
