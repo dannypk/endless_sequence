@@ -3,20 +3,35 @@
  */
 var sequence = require('../app/endless_sequence');
 
-describe("When provided input interval", function(){
+describe("When provided input interval", function () {
     var start, end;
-    beforeEach(function(){
+    beforeEach(function () {
         start = 15;
         end = 30;
-        const endlessSequences = sequence.calculateEndlessSequence({start:start, end:end});
     });
 
-    it("should be between 0 and 1.000.000", function(){
+    it("should be between 0 and 1.000.000", function () {
         expect(start).toBeGreaterThan(0);
         expect(end).toBeLessThan(1000000);
     });
 
-    it("should not have start value greater than end value", function(){
+    it("should not have start value greater than end value", function () {
         expect(start).toBeLessThan(end);
     })
+});
+
+describe("When interval range is 1 - 1", function () {
+    var start = 1, end = 1;
+    var endlessSequence = sequence.calculateEndlessSequence({start: start, end: end});
+    it("should return the cycle length equals to 1", function () {
+        expect(endlessSequence).toBe(1);
+    });
+});
+
+describe("When interval range is 2 - 2", function () {
+    var start = 2, end = 2;
+    var endlessSequence = sequence.calculateEndlessSequence({start: start, end: end});
+    it("should return the cycle length equals to 2", function () {
+        expect(endlessSequence).toBe(2);
+    });
 });
