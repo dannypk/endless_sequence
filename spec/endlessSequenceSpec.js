@@ -22,7 +22,7 @@ describe("When provided input interval", function () {
 
 describe("When interval range is 1 - 1", function () {
     var start = 1, end = 1;
-    var endlessSequence = sequence.calculateEndlessSequence({start: start, end: end});
+    var endlessSequence = sequence.calculateMaximumCycleLength({start: start, end: end});
     it("should return the cycle length equals to 1", function () {
         expect(endlessSequence).toBe(1);
     });
@@ -30,7 +30,15 @@ describe("When interval range is 1 - 1", function () {
 
 describe("When interval range is 2 - 2", function () {
     var start = 2, end = 2;
-    var endlessSequence = sequence.calculateEndlessSequence({start: start, end: end});
+    var endlessSequence = sequence.calculateMaximumCycleLength({start: start, end: end});
+    it("should return the cycle length equals to 2", function () {
+        expect(endlessSequence).toBe(2);
+    });
+});
+
+describe("When interval range is 1 - 2", function () {
+    var start = 1, end = 2;
+    var endlessSequence = sequence.calculateMaximumCycleLength({start: start, end: end});
     it("should return the cycle length equals to 2", function () {
         expect(endlessSequence).toBe(2);
     });
